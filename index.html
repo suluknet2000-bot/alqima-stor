@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>تحكم القمة</title>
-<style>body{font-family:system-ui;background:#111;color:#fff;padding:20px;text-align:center}.box{max-width:500px;margin:50px auto;background:#222;padding:25px;border-radius:20px}.b{display:block;padding:15px;margin:12px 0;border-radius:12px;color:#fff;text-decoration:none;font-weight:bold;font-size:18px}.p{background:#6C2EB5}.g{background:#25D366}.bl{background:#0088cc}</style>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>متجر القمة 👑</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@800&display=swap" rel="stylesheet">
+<style>*{font-family:'Tajawal',sans-serif;box-sizing:border-box}body{margin:0;background:#faf7ff}
+header{background:#6C2EB5;color:#fff;padding:20px;text-align:center}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:15px;max-width:700px;margin:auto}
+.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+.card img{width:100%;height:170px;object-fit:cover}
+.card.info{padding:10px}.price{color:#6C2EB5;font-weight:800}
+.btn{display:block;background:#25D366;color:#fff;text-align:center;padding:10px;border-radius:10px;text-decoration:none;margin-top:8px}
+.top{padding:15px;text-align:center}
+.top a{background:#111;color:#fff;padding:10px 20px;border-radius:20px;text-decoration:none}
+</style>
 </head>
-<body><div class="box">
-<h1>👑 لوحة تحكم القمة - مفتوحة</h1>
-<p>مرحبا @ismil777</p>
-<a class="b p" href="index.html">🛍️ فتح المتجر</a>
-<a class="b g" href="https://wa.me/963900000000">💬 واتساب</a>
-<a class="b bl" href="https://t.me/ismil777">📢 تلجرام</a>
-<p style="margin-top:20px;font-size:12px;color:#888">هذه لوحة بدون كلمة سر - اشتغلت 100%</p>
-</div></body></html>
+<body>
+<header><h1>👑 متجر القمة للألبسة</h1><p>@ismil777 - تل أبيض</p></header>
+<div class="top"><a href="dashboard.html">⚙️ دخول الإدارة</a></div>
+<div class="grid" id="grid"></div>
+
+<script>
+let defaultProds=[
+{name:"عباية سوداء فخمة",price:"45$",img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400"},
+{name:"فستان محجبات تركي",price:"35$",img:"https://images.unsplash.com/photo-1612336307429-8a898d10e223?w=400"}
+];
+let prods=JSON.parse(localStorage.getItem('alqima_products')||'null') || defaultProds;
+if(prods.length==0) prods=defaultProds;
+let grid=document.getElementById('grid');
+function renderStore(){
+ grid.innerHTML='';
+ prods.forEach(p=>{
+  grid.innerHTML+=`<div class="card"><img src="${p.img}"><div class="info"><b>${p.name}</b><div class="price">${p.price}</div><a class="btn" href="https://wa.me/963900000000?text=بدي ${encodeURIComponent(p.name)}" target="_blank">طلب واتساب 💬</a></div></div>`;
+ });
+}
+renderStore();
+// تحديث تلقائي اذا تغير من لوحة التحكم
+window.addEventListener('storage',()=>{prods=JSON.parse(localStorage.getItem('alqima_products')); renderStore();});
+</script>
+</body>
+</html>
