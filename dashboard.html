@@ -1,8 +1,29 @@
-<!DOCTYPE html><html dir="rtl" lang="ar"><head><meta charset="UTF-8"><title>القمة - بدون باسوورد</title>
-<style>body{background:#111;color:#fff;font-family:sans-serif;text-align:center;padding:30px}.b{display:block;margin:15px auto;padding:18px;max-width:400px;border-radius:15px;color:#fff;text-decoration:none;font-weight:bold;font-size:20px}.a{background:#6C2EB5}.w{background:#25D366}</style>
-</head><body>
-<h1>👑 لوحة القمة مفتوحة 100%</h1>
-<a class="b a" href="index.html">فتح المتجر</a>
-<a class="b w" href="https://wa.me/963900000000">واتساب</a>
-<p>تم إزالة كلمة السر</p>
-</body></html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إدارة القمة - بدون باسوورد</title>
+<style>*{box-sizing:border-box;font-family:system-ui}body{background:#f2f2f7;margin:0;padding:15px}.box{max-width:700px;margin:auto;background:#fff;padding:20px;border-radius:20px}h1{text-align:center;color:#6C2EB5}input{width:100%;padding:13px;margin:8px 0;border:1px solid #ddd;border-radius:10px;font-size:16px}.btn{width:100%;padding:14px;border:none;border-radius:12px;font-weight:bold;color:#fff;cursor:pointer;margin-top:10px;font-size:16px}.add{background:#6C2EB5}.prod{display:flex;gap:10px;align-items:center;border:1px solid #eee;padding:10px;border-radius:12px;margin:10px 0}.prod img{width:60px;height:60px;object-fit:cover;border-radius:10px}.del{background:#ff3b30;color:#fff;padding:6px 10px;border:none;border-radius:8px}.edit{background:#007aff;color:#fff;padding:6px 10px;border:none;border-radius:8px}</style>
+</head>
+<body>
+<div class="box">
+<h1>👑 إدارة متجر القمة</h1>
+<p style="text-align:center;color:green">مفتوحة بدون كلمة سر ✅</p>
+<input id="name" placeholder="اسم المنتج">
+<input id="price" placeholder="السعر مثال 35$">
+<input id="img" placeholder="رابط الصورة - من جوجل">
+<button class="btn add" onclick="addProd()">+ إضافة / حفظ التعديل</button>
+<div id="list"></div>
+<a href="index.html" style="display:block;text-align:center;margin-top:20px;background:#111;color:#fff;padding:12px;border-radius:12px;text-decoration:none">🛍️ شوف المتجر</a>
+</div>
+<script>
+let products=JSON.parse(localStorage.getItem('alqima_products')||'[]');
+let editIndex=-1;
+function render(){list.innerHTML='';products.forEach((p,i)=>{list.innerHTML+=`<div class="prod"><img src="${p.img}"><div style="flex:1"><b>${p.name}</b><br>${p.price}</div><button class="edit" onclick="editProd(${i})">تعديل</button><button class="del" onclick="delProd(${i})">حذف</button></div>`});}
+function addProd(){let n=name.value.trim(),pr=price.value.trim(),im=img.value.trim();if(!n||!pr||!im)return alert('عبي كل الحقول');if(editIndex>-1){products[editIndex]={name:n,price:pr,img:im};editIndex=-1;}else products.push({name:n,price:pr,img:im});localStorage.setItem('alqima_products',JSON.stringify(products));name.value=price.value=img.value='';render();}
+function delProd(i){if(confirm('تحذف؟')){products.splice(i,1);localStorage.setItem('alqima_products',JSON.stringify(products));render();}}
+function editProd(i){let p=products[i];name.value=p.name;price.value=p.price;img.value=p.img;editIndex=i;window.scrollTo(0,0);}
+render();
+</script>
+</body>
+</html>
