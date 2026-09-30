@@ -1,42 +1,9 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>متجر القمة 👑</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@800&display=swap" rel="stylesheet">
-<style>*{font-family:'Tajawal',sans-serif;box-sizing:border-box}body{margin:0;background:#faf7ff}
-header{background:#6C2EB5;color:#fff;padding:20px;text-align:center}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:15px;max-width:700px;margin:auto}
-.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.08)}
-.card img{width:100%;height:170px;object-fit:cover}
-.card.info{padding:10px}.price{color:#6C2EB5;font-weight:800}
-.btn{display:block;background:#25D366;color:#fff;text-align:center;padding:10px;border-radius:10px;text-decoration:none;margin-top:8px}
-.top{padding:15px;text-align:center}
-.top a{background:#111;color:#fff;padding:10px 20px;border-radius:20px;text-decoration:none}
-</style>
-</head>
-<body>
-<header><h1>👑 متجر القمة للألبسة</h1><p>@ismil777 - تل أبيض</p></header>
-<div class="top"><a href="dashboard.html">⚙️ دخول الإدارة</a></div>
-<div class="grid" id="grid"></div>
-
-<script>
-let defaultProds=[
-{name:"عباية سوداء فخمة",price:"45$",img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400"},
-{name:"فستان محجبات تركي",price:"35$",img:"https://images.unsplash.com/photo-1612336307429-8a898d10e223?w=400"}
-];href="https://wa.me/905316488110?text=بدي
-let prods=JSON.parse(localStorage.getItem('alqima_products')||'null') || defaultProds;
-if(prods.length==0) prods=defaultProds;
-let grid=document.getElementById('grid');
-function renderStore(){
- grid.innerHTML='';
- prods.forEach(p=>{
-  grid.innerHTML+=`<div class="card"><img src="${p.img}"><div class="info"><b>${p.name}</b><div class="price">${p.price}</div><a class="btn" href="https://wa.me/963900000000?text=بدي ${encodeURIComponent(p.name)}" target="_blank">طلب واتساب 💬</a></div></div>`;
- });
-}
-renderStore();
-// تحديث تلقائي اذا تغير من لوحة التحكم
-window.addEventListener('storage',()=>{prods=JSON.parse(localStorage.getItem('alqima_products')); renderStore();});
-</script>
-</body>
-</html>
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>متجر القمة</title><link rel="stylesheet" href="style.css"></head><body>
+<div class="news">🔥 متجر القمة — شحن وخدمات رقمية بسرعة وسهولة</div>
+<header><div class="brand">⛰️ <b>متجر القمة</b></div><nav><a href="#home">الرئيسية</a><a href="#categories">الأقسام</a><a href="#products">المنتجات</a><button onclick="openCart()">🛒 السلة <span id="count">0</span></button></nav></header>
+<main id="home"><section class="hero"><div><span>متجرك للخدمات الرقمية</span><h1>كل خدماتك الرقمية<br><strong>في مكان واحد</strong></h1><p>بطاقات • حسابات • شحن ألعاب وتطبيقات • خدمات رقمية</p><a class="btn" href="#products">تصفح المنتجات</a></div><div class="heroCard">⚡<b>تنفيذ سريع</b><small>اطلب الآن عبر واتساب</small></div></section>
+<h2 id="categories">الأقسام</h2><section class="cats" id="catList"></section>
+<h2 id="products">المنتجات</h2><div class="grid" id="productList"></div></main>
+<footer>© 2026 متجر القمة — جميع الحقوق محفوظة</footer>
+<div class="modal" id="cartModal"><div class="modalBox"><button class="x" onclick="closeCart()">×</button><h2>🛒 سلة الطلب</h2><div id="cartItems"></div><div class="total">المجموع: <b id="total">0</b> $</div><input id="customer" placeholder="اسمك"><input id="phone" placeholder="رقم التواصل"><button class="btn full" onclick="sendOrder()">إرسال الطلب عبر واتساب</button></div></div>
+<script src="app.js"></script></body></html>
