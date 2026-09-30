@@ -8,89 +8,80 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',sans-serif}
 body{background:#f7f3ff}
-.header{background:linear-gradient(135deg,#6C2EB5,#4a1f7d);color:#fff;padding:15px;position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center}
+header{background:linear-gradient(135deg,#6C2EB5,#4a1f7d);color:#fff;padding:15px;position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center}
 .logo{font-size:22px;font-weight:800}
 .btn-wa-head{background:#FF7A00;color:#fff;padding:8px 15px;border-radius:12px;text-decoration:none;font-weight:800}
 .container{max-width:1100px;margin:auto;padding:15px}
-.banner{background:linear-gradient(135deg,#FFE8CC,#FFD1A3);border-radius:18px;padding:18px;text-align:center;margin-bottom:15px;border:2px solid #FF7A00}
+.banner{background:linear-gradient(135deg,#FFE8CC,#FFD1A8);border-radius:18px;padding:18px;text-align:center;margin-bottom:15px;border:2px solid #FF7A00}
 .products{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 @media(max-width:600px){.products{grid-template-columns:1fr}}
 .card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 20px rgba(108,46,181,.1);border:1px solid #eee}
-.card img{width:100%;height:180px;object-fit:cover}
+.card img{width:100%;height:280px;object-fit:cover}
 .card-body{padding:12px}
-.card-title{font-weight:800;font-size:15px;line-height:1.3;height:40px}
+.card-title{font-weight:800;font-size:16px;height:45px}
 .card-desc{font-size:12px;color:#666;margin-top:5px}
-.card-price{color:#6C2EB5;font-weight:800;font-size:18px;margin-top:8px}
-.btn-order{width:100%;margin-top:10px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border:none;border-radius:12px;padding:11px;font-weight:800;font-size:14px;cursor:pointer}
-.footer{text-align:center;padding:20px;color:#6C2EB5;font-weight:700;margin-top:20px}
+.card-price{color:#6C2EB5;font-weight:800;font-size:20px;margin-top:8px}
+.btn-order{width:100%;margin-top:10px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border:none;border-radius:12px;padding:12px;font-weight:800;font-size:16px;cursor:pointer}
 </style>
 </head>
 <body>
-<div class="header">
-<div class="logo">👑 متجر القمة @ismil777</div>
-<a class="btn-wa-head" href="https://wa.me/905316488110">واتساب</a>
-</div>
-
+<header>
+<div class="logo">👑 متجر القمة</div>
+<a class="btn-wa-head" href="https://wa.me/963900000000">واتساب</a>
+</header>
 <div class="container">
 <div class="banner">
-<h2>🎮 حسابات OneState الأصلية</h2>
-<p>تسليم فوري • ضمان 100% • واتساب 905316488110</p>
+<h2>🔥 بديل شي إن الأول في سوريا 🔥</h2>
+<p>شحن لكل المحافظات - الدفع عند الاستلام - قناتنا @ismil777</p>
 </div>
-
 <div class="products">
-
+<!-- المنتج 1 -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600">
+<img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500" alt="فستان">
 <div class="card-body">
-<div class="card-title">OneState - حساب لفل 85 - 24 سكن أسطوري</div>
-<div class="card-desc">رتبة ماسي • 18 سلاح نادر • فلوس 2M</div>
-<div class="card-price">240 ر.س</div>
-<button class="btn-order" onclick="order('لفل 85 - 24 سكن أسطوري - 240 ر.س')">طلب عبر واتساب</button>
+<div class="card-title">فستان سهرة فخم - أسود</div>
+<div class="card-desc">قماش ممتاز - قياسات S M L XL</div>
+<div class="card-price">75,000 ل.س</div>
+<button class="btn-order" onclick="order('فستان سهرة فخم - أسود')">اطلب واتساب 📲</button>
 </div>
 </div>
-
+<!-- المنتج 2 -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600">
+<img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=500" alt="عباية">
 <div class="card-body">
-<div class="card-title">OneState - حساب لفل 60 - 12 سكن</div>
-<div class="card-desc">5 أسلحة نادرة • بداية قوية</div>
-<div class="card-price">120 ر.س</div>
-<button class="btn-order" onclick="order('لفل 60 - 120 ر.س')">طلب عبر واتساب</button>
+<div class="card-title">عباية خليجية سوداء</div>
+<div class="card-desc">موديل 2024 - قماش كريب</div>
+<div class="card-price">95,000 ل.س</div>
+<button class="btn-order" onclick="order('عباية خليجية سوداء')">اطلب واتساب 📲</button>
 </div>
 </div>
-
+<!-- المنتج 3 -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600">
+<img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500" alt="شنطة">
 <div class="card-body">
-<div class="card-title">OneState - حساب لفل 40</div>
-<div class="card-desc">6 سكن نادر • 3 أسلحة ملحمية</div>
-<div class="card-price">75 ر.س</div>
-<button class="btn-order" onclick="order('لفل 40 - 75 ر.س')">طلب عبر واتساب</button>
+<div class="card-title">شنطة يد نسائية</div>
+<div class="card-desc">جلد صناعي فاخر - بيج</div>
+<div class="card-price">45,000 ل.س</div>
+<button class="btn-order" onclick="order('شنطة يد نسائية')">اطلب واتساب 📲</button>
 </div>
 </div>
-
+<!-- المنتج 4 -->
 <div class="card">
-<img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="حذاء">
 <div class="card-body">
-<div class="card-title">OneState - حساب لفل 30 للمبتدئين</div>
-<div class="card-desc">4 سكن نادر • بداية جديدة</div>
-<div class="card-price">50 ر.س</div>
-<button class="btn-order" onclick="order('لفل 30 - 50 ر.س')">طلب عبر واتساب</button>
+<div class="card-title">حذاء كعب عالي</div>
+<div class="card-desc">مريح - للسهرات والمناسبات</div>
+<div class="card-price">60,000 ل.س</div>
+<button class="btn-order" onclick="order('حذاء كعب عالي')">اطلب واتساب 📲</button>
 </div>
 </div>
-
-</div>
-
-<div class="footer">
-متجر القمة | @ismil777 | +905316488110<br>
-جميع الحقوق محفوظة 2026
 </div>
 </div>
-
 <script>
-function order(p){
-var msg = "السلام عليكم - اريد طلب: " + p + " من متجر القمة";
-window.open("https://wa.me/905316488110?text=" + encodeURIComponent(msg), "_blank");
+function order(name){
+ let phone="963900000000"; // غير رقمك هون
+ let msg=`مرحبا متجر القمة 👑 بدي اطلب: ${name} - من موقعكم https://suluknet2000-bot.github.io/alqima-stor/`;
+ window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`,"_blank");
 }
 </script>
 </body>
